@@ -37,7 +37,8 @@ public class AddStrings {
         }
 //        else{
             if(b!=0)
-                sb.insert(0,b);         // used for (9,1) and (99,9) cases where if this condition not used then it will result in => 0 and 00 as abouve conditions will ignore b if the length satisfies num1.length and num2.length
+                sb.insert(0,b);         // used for (9,1) and (99,9) cases where if this condition not used then 
+                                 // it will result in => 0 and 00 as abouve conditions will ignore b if the length satisfies num1.length and num2.length
 //        }
         return sb.toString();
     }
