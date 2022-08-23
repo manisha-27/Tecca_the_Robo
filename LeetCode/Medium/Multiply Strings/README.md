@@ -23,7 +23,13 @@ Output: "56088"
  08***    8.
 04****    9.
 =========
-056088
+056088    ^
+          |
+         Steps
+
+Indexs to store the updated no in an array
+ _ _ _ _ _ _
+|5|4|3|2|1|0|  =>Array with indexes that store no. =>ch[num1.length+num2.length]
 ```
 
 ## Algorithm:
