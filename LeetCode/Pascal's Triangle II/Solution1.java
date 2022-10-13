@@ -3,7 +3,7 @@ class Solution {
         List<List<Integer>> tri=new ArrayList<>();
         for(int i=0;i<=rowIndex;i++){
         List<Integer> list=new ArrayList<>();
-            if(i==0)
+            if(i==0){
                 list.add(1);
             }else if(i==1){
                 list.add(1);
@@ -20,3 +20,5 @@ class Solution {
         return tri.get(tri.size()-1);
     }
 }
+
+// Question: https://leetcode.com/problems/pascals-triangle-ii/submissions/
