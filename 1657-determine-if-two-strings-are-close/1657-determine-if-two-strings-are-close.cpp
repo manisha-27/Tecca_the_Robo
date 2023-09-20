@@ -11,7 +11,7 @@ public:
         }
         if(w1.size()!=w2.size())
             return false;
-        for (const auto& pair : w1) {
+        for (auto pair : w1) {
             if (w2.find(pair.first) == w2.end())
                 return false;
         }
