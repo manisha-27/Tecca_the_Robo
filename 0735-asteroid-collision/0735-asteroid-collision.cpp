@@ -1,70 +1,29 @@
 class Solution {
 public:
     vector<int> asteroidCollision(vector<int>& asteroids) {
-        std::stack<int> st;
-        
-        for (int i = 0; i < asteroids.size(); ++i) {
-            int current = asteroids[i];
-
-            // Handle collisions
-            while (!st.empty() && st.top() > 0 && current < 0) {
-                int prev = st.top();
+        stack<int> st;
+        for (int i = 0; i < asteroids.size(); ++i){
+            int b=asteroids[i];
+            while(!st.empty() && st.top()>0 && b<0){
+                int prev=st.top();
                 st.pop();
-
-                if (std::abs(current) > prev) {
-                    continue; // Current asteroid destroys the previous
-                } else if (std::abs(current) == prev) {
-                    current = 0; // Both asteroids annihilate each other
-                } else {
-                    st.push(prev); // Previous asteroid destroys the current
-                    current = 0;
+                if(prev>abs(b)){
+                    st.push(prev);
+                    b=0;
+                }else if(prev==abs(b)){
+                    b=0;
                 }
             }
-
-            // Add remaining or non-colliding asteroids
-            if (current != 0) {
-                st.push(current);
+            if(b!=0){
+                st.push(b);
             }
         }
-
-        // Convert stack to vector
-        std::vector<int> result(st.size(), 0);
+        vector<int> result(st.size(), 0);
         for (int i = result.size() - 1; i >= 0; --i) {
             result[i] = st.top();
             st.pop();
         }
-
         return result;
-//         stack<int> st;
-//         st.push(asteroids[0]);
-//         int i=1;
-//         while(i<asteroids.size()){
-//             int a=st.top();
-//             int b=asteroids[i];
-//             while(a>0 && b<0  && a<abs(b)){
-//                 a=st.top();
-//                 st.pop();
-//             }
-//             if(a>0 && b<0 && abs(b)>a){
-//                 st.push(b);
-//             }else if(a>0 && b<0 && abs(b)<a){
-                
-//             }
-//             else if(a>0 && b<0 && abs(b)==a){
-//                 st.pop();
-//             }else{
-//                 st.push(b);
-//             }
-//             i++;
-//         }
-//         i=st.size();
-//         vector<int> arr(i,0);
-//         while(!st.empty()){
-//             arr[i-1]=st.top();
-//             st.pop();
-//             i--;
-//         }
-//         return arr;
     }
 };
 
