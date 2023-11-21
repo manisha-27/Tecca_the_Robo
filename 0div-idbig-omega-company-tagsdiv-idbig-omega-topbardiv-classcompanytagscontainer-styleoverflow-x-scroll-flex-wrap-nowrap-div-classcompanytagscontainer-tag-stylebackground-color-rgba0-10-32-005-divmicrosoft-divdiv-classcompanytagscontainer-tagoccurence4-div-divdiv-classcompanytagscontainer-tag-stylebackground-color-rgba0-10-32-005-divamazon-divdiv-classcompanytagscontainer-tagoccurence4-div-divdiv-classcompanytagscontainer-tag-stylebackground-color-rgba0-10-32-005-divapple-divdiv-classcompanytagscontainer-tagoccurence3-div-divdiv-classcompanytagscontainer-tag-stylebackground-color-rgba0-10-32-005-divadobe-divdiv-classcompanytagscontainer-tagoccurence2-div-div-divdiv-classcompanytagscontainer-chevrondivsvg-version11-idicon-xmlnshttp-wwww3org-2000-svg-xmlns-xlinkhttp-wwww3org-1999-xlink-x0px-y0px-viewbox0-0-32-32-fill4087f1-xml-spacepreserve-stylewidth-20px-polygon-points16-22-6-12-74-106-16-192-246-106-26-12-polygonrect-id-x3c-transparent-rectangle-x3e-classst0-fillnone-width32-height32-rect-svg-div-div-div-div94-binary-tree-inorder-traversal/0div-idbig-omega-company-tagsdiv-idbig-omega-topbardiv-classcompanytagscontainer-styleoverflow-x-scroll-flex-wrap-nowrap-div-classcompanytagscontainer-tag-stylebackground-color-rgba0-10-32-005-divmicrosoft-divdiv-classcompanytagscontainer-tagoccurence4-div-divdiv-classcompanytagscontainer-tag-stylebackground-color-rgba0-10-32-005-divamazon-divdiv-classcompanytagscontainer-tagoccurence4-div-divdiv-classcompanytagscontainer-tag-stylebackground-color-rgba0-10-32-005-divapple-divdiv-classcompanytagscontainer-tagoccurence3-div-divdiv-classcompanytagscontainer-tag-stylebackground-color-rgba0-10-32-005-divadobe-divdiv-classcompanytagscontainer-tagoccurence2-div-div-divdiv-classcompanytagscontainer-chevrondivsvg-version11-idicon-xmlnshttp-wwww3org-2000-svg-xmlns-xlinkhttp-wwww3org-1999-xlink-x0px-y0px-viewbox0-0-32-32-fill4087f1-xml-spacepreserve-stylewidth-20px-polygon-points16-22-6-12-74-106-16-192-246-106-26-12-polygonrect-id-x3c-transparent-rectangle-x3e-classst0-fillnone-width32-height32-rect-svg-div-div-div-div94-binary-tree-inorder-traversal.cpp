@@ -19,7 +19,7 @@ public:
         vector<int> preo;
         stack<TreeNode*> st;
         // st.push(root);
-        do{
+        while(!st.empty() || root!=NULL){
             while(root!=NULL){
                 st.push(root);
                 root=root->left;
@@ -28,7 +28,7 @@ public:
             st.pop();
             preo.push_back(root->val);
             root=root->right;
-        }while(!st.empty() || root!=NULL);
+        }
         return preo;
     }
 };
