@@ -9,7 +9,7 @@ public:
                 --x;
             else if(operations[i][0]=='X' && operations[i][1]=='+')
                 x++;
-            else if(operations[i][0]=='X' && operations[i][1]=='-')
+            else
                 x--;
         }
         return x;
