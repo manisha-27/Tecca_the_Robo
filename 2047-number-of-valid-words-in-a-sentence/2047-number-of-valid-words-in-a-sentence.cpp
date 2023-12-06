@@ -10,9 +10,9 @@ public:
         for(int i=0;i<=n;i++){
             if(str[i]=='-'){
                 hy++;
-                if(!islower(str[i - 1]) || !islower(str[i + 1]))
-                    return false;
             }
+            if(str[i]=='-' && (!islower(str[i - 1]) || !islower(str[i + 1])))
+                return false;
             if(i!=n && (str[i]==',' || str[i]=='!' || str[i]=='.'))
                 return false;
             if(isdigit(str[i]) || hy>1)
