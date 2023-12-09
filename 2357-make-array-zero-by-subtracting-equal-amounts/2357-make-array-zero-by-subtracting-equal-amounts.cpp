@@ -7,18 +7,14 @@ public:
                 pq.push(nums[i]);
         }
         int count=0;
+        int sum=0;
         while(!pq.empty()){
-            int a=pq.top();
+            int a=pq.top()-sum;
+            if(a!=0){
+                sum+=a;
+                count++;
+            }
             pq.pop();
-            vector<int> arr;
-            while(!pq.empty()){
-                if(pq.top()-a>0) arr.push_back(pq.top()-a);
-                pq.pop();
-            }
-            for (int x : arr) {
-                pq.push(x);
-            }
-            count++;
         }
         return count;
     }
