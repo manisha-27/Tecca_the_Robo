@@ -13,7 +13,7 @@ public:
         while(j<s.size()){
             int a=findC(s.substr(i,j-i),'0');
             int b=findC(s.substr(j),'1');
-            cout<<a<<" "<<s.substr(i,j-i)<<" - "<<b<<" "<<s.substr(j)<<endl;
+            // cout<<a<<" "<<s.substr(i,j-i)<<" - "<<b<<" "<<s.substr(j)<<endl;
             maxSc=max(maxSc, a+b);
             j++;
         }
