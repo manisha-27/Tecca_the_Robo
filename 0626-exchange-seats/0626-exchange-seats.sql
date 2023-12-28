@@ -1,7 +1,17 @@
 # Write your MySQL query statement below
-select id, if(id%2=1, lead(student,1,student) over (order by id),lag(student) over(order by id)) student
+# select id, if(id%2=1, lead(student,1,student) over (order by id),lag(student) over(order by id)) student
+# from seat
+
+select case 
+when id= (select max(id) from seat) and id%2=1
+then id
+when id%2=1
+then id+1
+else
+id-1
+end as id, student
 from seat
-# where e1.id%2=0 and 
+order by id
 
 
 # SELECT 
