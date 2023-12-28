@@ -2,7 +2,7 @@
 (select u.name results
 from movierating m left join users u on m.user_id=u.user_id
 group by m.user_id
-order by count(*) desc, name
+order by count(m.user_id) desc, name
 limit 1)
 
 union all
