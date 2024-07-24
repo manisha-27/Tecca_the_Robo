@@ -37,7 +37,6 @@ public:
                     return false;
             }
         }
-        if(!qe1.empty() || !qe2.empty()) return false;
-        return true;
+        return qe1.empty() && qe2.empty();
     }
 };
