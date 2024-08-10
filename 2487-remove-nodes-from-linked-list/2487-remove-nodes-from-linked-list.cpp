@@ -16,14 +16,11 @@ public:
         int index = 0;
         
         while (head != NULL) {
-            // Pop elements from the stack while the current node's value is greater
             while (!s.empty() && s.top().first->val < head->val) {
                 ans[s.top().second] = {head, index};
                 s.pop();
             }
-            // Push the current node and its index to the stack
             s.push({head, index});
-            // Initialize ans with a default pair of nullptr and -1
             ans.push_back({nullptr, -1});
             head = head->next;
             index++;
@@ -42,10 +39,8 @@ public:
         int index = 0;
         while (temp->next != NULL) {
             if (res[index].first != nullptr) {
-                // Skip the current node as it has a larger node ahead
                 temp->next = temp->next->next;
             } else {
-                // Move to the next node
                 temp = temp->next;
             }
             index++;
